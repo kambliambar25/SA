@@ -1,0 +1,17 @@
+declare
+input integer(10);
+temp1 integer(10);
+temp2 integer(10):=0;
+temp3 integer(10);
+begin
+input:=&input;
+temp3:=input;
+while input > 0
+loop
+temp1:=input mod 10;
+temp2:=temp2+temp1;
+input:=floor(input/10);
+end loop;
+dbms_output.put_line('The sum of digits of '||temp3||' is '||temp2);
+end;
+/

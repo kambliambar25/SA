@@ -1,0 +1,19 @@
+DECLARE  
+cursor c
+ IS
+     SELECT salary
+     FROM emp;
+a c%rowtype;
+BEGIN  
+open c;
+fetch c into a ;
+   IF c%notfound THEN 
+      dbms_output.put_line( ' ERROR!'); 
+   ELSIF c%found THEN       
+  UPDATE EMP
+   SET SALARY = SALARY + 1000
+where salary<10000;
+   END IF;  
+close c;
+END; 
+/    

@@ -1,0 +1,17 @@
+DECLARE  
+q emp.name%type;
+w emp.city%type;
+e emp.job%type;
+cursor c
+IS
+SELECT name,city,job FROM emp;
+BEGIN  
+open c;
+loop
+fetch c into q,w,e;
+EXIT WHEN c%notfound;       
+dbms_output.put_line(q||' '||w||' '||e);
+end loop;
+close c;
+END; 
+   
