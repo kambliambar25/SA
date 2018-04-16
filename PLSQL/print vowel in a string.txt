@@ -1,0 +1,14 @@
+DECLARE
+V VARCHAR2(300):='&V';
+CNT NUMBER(5):=0;
+C CHAR;
+BEGIN
+FOR I IN 1..LENGTH(V)
+LOOP
+C:=SUBSTR(V,I,1);
+IF C IN ('A','E','I','O','U','a','e','o','i','u') THEN
+dbms_output.put_line(C);
+END IF;
+END LOOP;
+END;
+/
